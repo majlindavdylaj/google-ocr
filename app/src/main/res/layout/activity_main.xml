@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cam_l"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8A000000">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="Scanner App"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/scan_image"
+            app:tint="@android:color/white"/>
+
+        <Button
+            android:id="@+id/start_scan"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_above="@id/documents"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:drawableStart="@drawable/ic_scan_icon"
+            android:drawableTint="@color/colorAccent"
+            android:text="Start SCAN"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/documents"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#7A7979"
+            android:drawableStart="@drawable/ic_list_icon"
+            android:drawableTint="@color/colorAccent"
+            android:text="Documents"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

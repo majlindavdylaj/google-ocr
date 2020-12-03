@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Scan"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-thin"/>
+
+    <Button
+        android:id="@+id/scan_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan Image"
+        android:drawableLeft="@drawable/ic_scancam_icon"
+        android:background="@drawable/background_pressed"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/colorPrimary"
+        android:textAlignment="textStart"/>
+
+    <Button
+        android:id="@+id/scan_document"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan Document"
+        android:drawableLeft="@drawable/ic_document_icon"
+        android:background="@drawable/background_pressed"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/colorPrimary"
+        android:textAlignment="textStart"/>
+
+    <Button
+        android:id="@+id/upload_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:drawableLeft="@drawable/ic_upload_icon"
+        android:background="@drawable/background_pressed"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/colorPrimary"
+        android:textAlignment="textStart"
+        android:layout_marginBottom="15dp"/>
+
+</LinearLayout>

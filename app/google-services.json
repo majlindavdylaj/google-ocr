@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "9818589514",
+    "firebase_url": "https://koddev-firebase.firebaseio.com",
+    "project_id": "koddev-firebase",
+    "storage_bucket": "koddev-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9818589514:android:e9eb02ea4ab6fcedd8d9b3",
+        "android_client_info": {
+          "package_name": "com.koddev.googleocr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9818589514-3mnpi77oq958dsb08qdmldos9s8gntis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koddev.googleocr",
+            "certificate_hash": "50a8f75c0c8dc021e9fe7decb1a52b3bfd823491"
+          }
+        },
+        {
+          "client_id": "9818589514-epcq3d2b8guhl2eh60d995mct9e59dnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmzW8ZDCBMf4yFFuOvKu78WE7laAOqQL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9818589514-epcq3d2b8guhl2eh60d995mct9e59dnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9818589514:android:f7d241b4b53d3c52d8d9b3",
+        "android_client_info": {
+          "package_name": "com.koddev.wallpaperapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9818589514-as4hlurqlbs0ijg40f1lgq6dtr4dldsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koddev.wallpaperapp",
+            "certificate_hash": "50a8f75c0c8dc021e9fe7decb1a52b3bfd823491"
+          }
+        },
+        {
+          "client_id": "9818589514-k81dgr9oknabam3vlpgdmilu2bon4e7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koddev.wallpaperapp",
+            "certificate_hash": "3db97c0c93f9888fcf7b9a0ca845a580c20fc587"
+          }
+        },
+        {
+          "client_id": "9818589514-epcq3d2b8guhl2eh60d995mct9e59dnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmzW8ZDCBMf4yFFuOvKu78WE7laAOqQL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9818589514-epcq3d2b8guhl2eh60d995mct9e59dnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
