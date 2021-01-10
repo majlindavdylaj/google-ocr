@@ -20,7 +20,9 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.koddev.googleocr.R;
+import com.koddev.googleocr.ui.GalleryActivity;
 import com.koddev.googleocr.ui.ScanImageActivity;
+import com.koddev.googleocr.ui.SelectPdfActivity;
 
 public class ChooseBottomSheetDialog extends BottomSheetDialogFragment {
 
@@ -40,11 +42,11 @@ public class ChooseBottomSheetDialog extends BottomSheetDialogFragment {
         });
 
         scan_document.setOnClickListener(v -> {
-
+            startActivity(new Intent(getContext(), SelectPdfActivity.class));
         });
 
         upload_image.setOnClickListener(v -> {
-
+            startActivity(new Intent(getContext(), GalleryActivity.class));
         });
 
         return view;

@@ -15,6 +15,7 @@ import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.os.Build;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         documents.setOnClickListener(v -> {
-            //Load scanned documents
+            startActivity(new Intent(this, DocumentsActivity.class));
         });
 
     }

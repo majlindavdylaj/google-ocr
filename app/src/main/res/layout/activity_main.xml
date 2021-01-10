@@ -52,7 +52,7 @@
             android:layout_centerHorizontal="true"
             android:backgroundTint="@color/colorPrimary"
             android:drawableStart="@drawable/ic_scan_icon"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@android:color/white"
             android:text="Start SCAN"
             android:textColor="@android:color/white"/>
 
@@ -65,7 +65,7 @@
             android:layout_centerHorizontal="true"
             android:backgroundTint="#7A7979"
             android:drawableStart="@drawable/ic_list_icon"
-            android:drawableTint="@color/colorAccent"
+            android:drawableTint="@android:color/white"
             android:text="Documents"
             android:textColor="@android:color/white"/>
 

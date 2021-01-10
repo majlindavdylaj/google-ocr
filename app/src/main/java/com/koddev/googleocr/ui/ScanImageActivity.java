@@ -13,6 +13,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -31,6 +32,7 @@ import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.koddev.googleocr.R;
 import com.koddev.googleocr.helper.CustomCamera;
+import com.koddev.googleocr.helper.Recognize;
 
 import java.util.concurrent.ExecutionException;
 
@@ -39,9 +41,6 @@ public class ScanImageActivity extends AppCompatActivity {
     private PreviewView preview_view;
     private ImageView scan;
     RelativeLayout cropped;
-
-    public static FirebaseVisionText resultText;
-    public static Bitmap myBitmap;
 
     private CustomCamera customCamera;
 
@@ -61,59 +60,9 @@ public class ScanImageActivity extends AppCompatActivity {
 
         scan.setOnClickListener(view -> {
             Bitmap bitmap = customCamera.getBitmap();
-            myBitmap = cropImage(bitmap);
-            startRecognizing(myBitmap);
+            Bitmap myBitmap = cropImage(bitmap);
+            new Recognize(this).startRecognizing(myBitmap);
         });
-    }
-
-    public void startRecognizing(Bitmap bitmap){
-        if (bitmap != null){
-            scan.setEnabled(false);
-            scan.setBackgroundTintList(getResources().getColorStateList(android.R.color.darker_gray));
-            FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
-            FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
-
-            detector.processImage(image).addOnSuccessListener(firebaseVisionText -> {
-                scan.setEnabled(true);
-                scan.setBackgroundTintList(getResources().getColorStateList(android.R.color.white));
-                processResultText(firebaseVisionText);
-            }).addOnFailureListener(e -> {
-                scan.setEnabled(true);
-                scan.setBackgroundTintList(getResources().getColorStateList(android.R.color.white));
-                Toast.makeText(ScanImageActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
-            });
-
-        } else {
-            Toast.makeText(this, "Select an Image First", Toast.LENGTH_LONG).show();
-        }
-
-    }
-
-    private void processResultText(FirebaseVisionText resultText) {
-        if (resultText.getTextBlocks().size() == 0){
-            Toast.makeText(this, "No Text Found", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        ScanImageActivity.resultText = resultText;
-
-        startActivity(new Intent(this, ResultImageActivity.class));
-
-        /*for (FirebaseVisionText.TextBlock textBlock : resultText.getTextBlocks()){
-            //textView.append(textBlock.getText()+"\n");
-            for (FirebaseVisionText.Line line : textBlock.getLines()){
-                if ((line.getBoundingBox().bottom - line.getBoundingBox().top) > 15) {
-                    textView.append(line.getText() + "\n");
-                    //textView.append(line.getCornerPoints()[0].toString()+" - "+line.getText()+"\n");
-                    //textView.append(line.getConfidence()+" - "+line.getText()+"\n");
-                /*for (FirebaseVisionText.Element element : line.getElements()){
-                    textView.append(element.getText()+"\n");
-                }*/
-                /*}
-            }
-        }*/
-
-        //Toast.makeText(this, ""+resultText.getTextBlocks().size(), Toast.LENGTH_SHORT).show();
     }
 
     private Bitmap cropImage(Bitmap bitmap){
